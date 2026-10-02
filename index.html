@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[PLACEHOLDER: Título de la Página]</title>
+    <title>Código de Ética del CIE para las Enfermeras (2021)</title>
+    
+    <!-- ========================================== -->
+    <!-- ZONA EDITABLE: ESTILOS Y DISEÑO (DALA)     -->
+    <!-- NO TOCAR DESDE AQUÍ (Variables de diseño)  -->
+    <!-- ========================================== -->
     <style>
-        /* ==========================================
-           NO TOCAR DESDE AQUÍ - SISTEMA DE DISEÑO BASE
-           ========================================== */
         :root {
-            --color-electric-lime: #beff50;
-            --color-off-black-ink: #14140f;
-            --color-off-white-canvas: #f5f5eb;
-            --color-pure-white: #ffffff;
-            --color-ash: #d2d2c8;
-            --color-graphite: #6e6e64;
-            --font-main: 'OTSono', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --radius-cards: 28px;
-            --radius-buttons: 28px;
-            --radius-full: 9999px;
+            --color-void: #000000;
+            --color-bone-white: #ffffff;
+            --color-ash-gray: #9a9a9a;
+            --color-silver-mist: #bdbdbd;
+            --color-electric-iris: #8052ff;
+            --color-saffron-spark: #ffb829;
+            --color-deep-verdant: #15846e;
+            
+            --font-main: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         * {
@@ -28,334 +29,371 @@
         }
 
         body {
+            background-color: var(--color-void);
+            color: var(--color-bone-white);
             font-family: var(--font-main);
-            background-color: var(--color-pure-white);
-            color: var(--color-off-black-ink);
-            font-size: 16px;
-            line-height: 1.5;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
+        /* Navegación Minimalista */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 36px;
         }
 
-        /* Botón de Acción Principal (Lime Pill) */
-        .btn-primary {
-            display: inline-flex;
+        .logo-lockup {
+            display: flex;
             align-items: center;
-            justify-content: center;
-            background-color: var(--color-electric-lime);
-            color: var(--color-off-black-ink);
-            font-weight: 500;
-            font-size: 16px;
-            padding: 16px 24px;
-            border-radius: var(--radius-buttons);
-            min-height: 44px;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--color-bone-white);
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.025em;
+        }
+
+        .logo-icon {
+            width: 18px;
+            height: 18px;
+            background: var(--color-electric-iris);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--color-ash-gray);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.025em;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--color-bone-white);
+        }
+
+        .btn-primary {
+            background-color: var(--color-electric-iris);
+            color: var(--color-bone-white);
             border: none;
+            border-radius: 22.5px;
+            padding: 14.4px 22px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
             cursor: pointer;
+            text-decoration: none;
             transition: opacity 0.2s ease;
+            display: inline-block;
+            min-height: 44px;
         }
 
         .btn-primary:hover {
             opacity: 0.9;
         }
 
-        /* Navegación Superior */
-        header {
-            background-color: var(--color-pure-white);
-            border-bottom: 1px solid var(--color-ash);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        /* Estructura general de secciones */
+        section {
+            min-height: 100vh;
+            padding: 140px 24px 80px 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             align-items: center;
         }
 
-        .logo {
-            font-weight: 500;
-            font-size: 22px;
-            letter-spacing: -0.56px;
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                padding: 12px 18px;
+            }
+            nav ul {
+                display: none;
+            }
         }
 
-        /* Secciones Generales */
-        section {
-            padding: 80px 0;
-            border-bottom: 1px solid var(--color-ash);
-        }
-
-        /* ==========================================
-           EDITAR AQUÍ - CONTENIDO DE LA PÁGINA
-           ========================================== */
-
-        /* 1. Cabecera / Hero Section */
-        .hero {
-            background-color: var(--color-off-white-canvas);
-            padding: 96px 0;
-            text-align: center;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--color-graphite);
-            background-color: var(--color-pure-white);
-            padding: 6px 16px;
-            border-radius: var(--radius-full);
-            margin-bottom: 24px;
-        }
-
-        .hero h1 {
-            font-size: clamp(36px, 6vw, 60px);
-            font-weight: 500;
-            line-height: 1;
-            letter-spacing: -1.8px;
-            margin-bottom: 24px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: var(--color-graphite);
-            max-width: 600px;
-            margin: 0 auto 32px auto;
-        }
-
-        /* 2. Propuesta de Valor (Servicios / Características) */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 48px;
-        }
-
-        .card {
-            background-color: var(--color-off-white-canvas);
-            border-radius: var(--radius-cards);
-            padding: 40px;
-        }
-
-        .card h3 {
-            font-size: 22px;
-            font-weight: 500;
-            margin-bottom: 12px;
-            letter-spacing: -0.56px;
-        }
-
-        .card p {
-            color: var(--color-graphite);
-        }
-
-        .section-title {
-            font-size: 32px;
-            font-weight: 500;
-            letter-spacing: -0.56px;
-            margin-bottom: 16px;
-            text-align: center;
-        }
-
-        .section-subtitle {
-            color: var(--color-graphite);
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* 3. Cómo Funciona */
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-            margin-top: 48px;
-        }
-
-        .step-number {
+        .tag-label {
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
+            color: var(--color-saffron-spark);
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--color-graphite);
-            margin-bottom: 8px;
+            letter-spacing: 0.35px;
+            margin-bottom: 18px;
+            display: block;
         }
 
-        /* 4. Sección Destacada (Lime Accent Panel) */
-        .highlight-banner {
-            background-color: var(--color-electric-lime);
-            border-radius: var(--radius-cards);
-            padding: 60px 40px;
-            text-align: center;
-            margin-top: 48px;
-        }
-
-        .highlight-banner h2 {
-            font-size: 32px;
-            font-weight: 500;
-            letter-spacing: -0.56px;
-            margin-bottom: 16px;
-        }
-
-        .highlight-banner p {
-            color: var(--color-off-black-ink);
-            max-width: 600px;
-            margin: 0 auto 24px auto;
-        }
-
-        /* 5. Pie de Página y Contacto */
-        footer {
-            background-color: var(--color-off-black-ink);
-            color: var(--color-off-white-canvas);
-            padding: 80px 0;
-        }
-
-        footer h2 {
-            color: var(--color-pure-white);
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: 16px;
-        }
-
-        footer p {
-            color: var(--color-ash);
+        h1 {
+            font-size: clamp(42px, 7vw, 78px);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -3.12px;
             margin-bottom: 24px;
+            color: var(--color-bone-white);
         }
 
-        .contact-info {
-            margin-top: 24px;
-            font-size: 16px;
+        h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -1.68px;
+            margin-bottom: 24px;
+            color: var(--color-bone-white);
         }
 
-        .contact-info p {
-            margin-bottom: 8px;
+        p.body-text {
+            font-size: 18px;
+            font-weight: 200;
+            line-height: 1.5;
+            color: var(--color-silver-mist);
+            margin-bottom: 36px;
+            max-width: 520px;
         }
 
-        /* ==========================================
-           NO TOCAR DESDE AQUÍ - RESPONSIVE Y UTILIDADES
-           ========================================== */
-        @media (max-width: 768px) {
-            section {
-                padding: 60px 0;
-            }
-            .hero {
-                padding: 64px 0;
-            }
+        /* Constelación / Visual SVG Geométrica simulando el enfoque neuronal/ético */
+        .constellation-graphic {
+            width: 100%;
+            height: 350px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Tarjetas de elementos flotantes */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card-item {
+            padding: 32px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: border-color 0.3s ease;
+        }
+
+        .card-item:hover {
+            border-color: var(--color-electric-iris);
+        }
+
+        .card-item h3 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 12px;
+            color: var(--color-bone-white);
+        }
+
+        .card-item p {
+            font-size: 15px;
+            font-weight: 200;
+            color: var(--color-silver-mist);
+            line-height: 1.5;
+        }
+
+        footer {
+            padding: 60px 24px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--color-ash-gray);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
     </style>
+    <!-- NO TOCAR HASTA AQUÍ -->
 </head>
 <body>
 
-    <!-- Navegación -->
+    <!-- ========================================== -->
+    <!-- ZONA EDITAR AQUÍ: DATOS DE CONTACTO Y TEXTOS -->
+    <!-- ========================================== -->
     <header>
-        <div class="container nav-content">
-            <div class="logo">[PLACEHOLDER: Nombre o Marca]</div>
-            <a href="#contacto" class="btn-primary" style="padding: 10px 20px; font-size: 14px; min-height: 40px;">Contactar</a>
-        </div>
+        <a href="#inicio" class="logo-lockup">
+            <div class="logo-icon"></div>
+            <span>CIE 2021</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#pacientes">Pacientes</a></li>
+                <li><a href="#practica">Práctica</a></li>
+                <li><a href="#profesion">Profesión</a></li>
+                <li><a href="#salud-global">Salud Global</a></li>
+            </ul>
+        </nav>
+        <a href="#contacto" class="btn-primary">Contacto</a>
     </header>
 
-    <main>
-        <!-- 1. Cabecera / Inicio -->
-        <section class="hero">
-            <div class="container">
-                <span class="hero-tag">[PLACEHOLDER: Categoría o Novedad]</span>
-                <h1>[PLACEHOLDER: Titular principal que explica claramente tu propuesta de valor]</h1>
-                <p>[PLACEHOLDER: Breve descripción complementaria de lo que ofreces y a quién ayudas con este proyecto.]</p>
-                <a href="#contacto" class="btn-primary">[PLACEHOLDER: Texto del Botón Principal]</a>
+    <!-- SECCIÓN 1: INICIO / HÉROE -->
+    <section id="inicio">
+        <div class="hero-grid">
+            <div>
+                <span class="tag-label">Consejo Internacional de Enfermeras</span>
+                <h1>Código de Ética para las Enfermeras</h1>
+                <p class="body-text">
+                    Declaración fundamental de valores, responsabilidades profesionales y ámbitos competenciales de rendición de cuentas revisada en 2021 para guiar la práctica ética en todos los entornos[cite: 37].
+                </p>
+                <a href="#pacientes" class="btn-primary">Explorar Elementos</a>
             </div>
-        </section>
-
-        <!-- 2. Propuesta de Valor -->
-        <section>
-            <div class="container">
-                <h2 class="section-title">[PLACEHOLDER: Título de Características o Servicios]</h2>
-                <p class="section-subtitle">[PLACEHOLDER: Subtítulo breve sobre por qué elegir esta propuesta.]</p>
-                <div class="features-grid">
-                    <div class="card">
-                        <h3>[PLACEHOLDER: Beneficio 1]</h3>
-                        <p>[PLACEHOLDER: Explicación breve de la primera ventaja o característica destacada.]</p>
-                    </div>
-                    <div class="card">
-                        <h3>[PLACEHOLDER: Beneficio 2]</h3>
-                        <p>[PLACEHOLDER: Explicación breve de la segunda ventaja o característica destacada.]</p>
-                    </div>
-                    <div class="card">
-                        <h3>[PLACEHOLDER: Beneficio 3]</h3>
-                        <p>[PLACEHOLDER: Explicación breve de la tercera ventaja o característica destacada.]</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Cómo Funciona -->
-        <section>
-            <div class="container">
-                <h2 class="section-title">Cómo funciona</h2>
-                <p class="section-subtitle">Un proceso sencillo pensado para ti.</p>
-                <div class="steps-grid">
-                    <div class="card" style="background-color: var(--color-pure-white); border: 1px solid var(--color-ash);">
-                        <div class="step-number">Paso 01</div>
-                        <h3>[PLACEHOLDER: Paso uno]</h3>
-                        <p>[PLACEHOLDER: Descripción corta del primer paso del proceso.]</p>
-                    </div>
-                    <div class="card" style="background-color: var(--color-pure-white); border: 1px solid var(--color-ash);">
-                        <div class="step-number">Paso 02</div>
-                        <h3>[PLACEHOLDER: Paso dos]</h3>
-                        <p>[PLACEHOLDER: Descripción corta del segundo paso del proceso.]</p>
-                    </div>
-                    <div class="card" style="background-color: var(--color-pure-white); border: 1px solid var(--color-ash);">
-                        <div class="step-number">Paso 03</div>
-                        <h3>[PLACEHOLDER: Paso tres]</h3>
-                        <p>[PLACEHOLDER: Descripción corta del tercer paso del proceso.]</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Sección Destacada -->
-        <section style="background-color: var(--color-pure-white);">
-            <div class="container">
-                <div class="highlight-banner">
-                    <h2>[PLACEHOLDER: Llamado a la acción o frase de impacto final]</h2>
-                    <p>[PLACEHOLDER: Texto de apoyo que anima al visitante a dar el siguiente paso hoy mismo.]</p>
-                    <a href="#contacto" class="btn-primary" style="background-color: var(--color-off-black-ink); color: var(--color-electric-lime);">[PLACEHOLDER: Botón Destacado]</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 5. Pie de Página y Contacto -->
-    <footer id="contacto">
-        <div class="container">
-            <h2>Hablemos</h2>
-            <p>[PLACEHOLDER: Breve texto de cierre invitando a escribir o conectar.]</p>
-            <div class="contact-info">
-                <p>Email: <a href="mailto:[PLACEHOLDER: tu-correo@ejemplo.com]" style="text-decoration: underline;">[PLACEHOLDER: tu-correo@ejemplo.com]</a></p>
-                <p>Teléfono: [PLACEHOLDER: +00 000 000 000]</p>
+            <div class="constellation-graphic">
+                <!-- SVG Vectorial abstracto representando la red ética y los valores -->
+                <svg viewBox="0 0 300 300" width="100%" height="100%">
+                    <circle cx="150" cy="150" r="120" fill="none" stroke="#8052ff" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.3"/>
+                    <circle cx="150" cy="150" r="80" fill="none" stroke="#ffb829" stroke-width="0.5" opacity="0.4"/>
+                    <!-- Nodos triangulares característicos de la guía Dala -->
+                    <polygon points="150,90 130,130 170,130" fill="none" stroke="#8052ff" stroke-width="1.5"/>
+                    <polygon points="100,180 80,210 120,210" fill="none" stroke="#ffb829" stroke-width="1.5"/>
+                    <polygon points="200,180 180,210 220,210" fill="none" stroke="#15846e" stroke-width="1.5"/>
+                    <line x1="150" y1="130" x2="100" y2="180" stroke="#9a9a9a" stroke-width="0.8"/>
+                    <line x1="150" y1="130" x2="200" y2="180" stroke="#9a9a9a" stroke-width="0.8"/>
+                    <line x1="100" y1="210" x2="200" y2="210" stroke="#9a9a9a" stroke-width="0.8"/>
+                    <circle cx="150" cy="150" r="6" fill="#ffffff"/>
+                    <circle cx="100" cy="180" r="4" fill="#ffb829"/>
+                    <circle cx="200" cy="180" r="4" fill="#8052ff"/>
+                </svg>
             </div>
         </div>
-    </footer>
+    </section>
 
+    <!-- SECCIÓN 2: PACIENTES -->
+    <section id="pacientes">
+        <span class="tag-label">Elemento 01</span>
+        <h2>Las enfermeras y los pacientes</h2>
+        <p class="body-text">
+            La prioridad primordial es hacia las personas que necesitan cuidados, promoviendo entornos que respeten los derechos humanos, la dignidad y la equidad[cite: 10].
+        </p>
+        <div class="grid-cards">
+            <div class="card-item">
+                <h3>Derechos y Dignidad</h3>
+                <p>Respeto absoluto por los valores, costumbres y creencias religiosas de los pacientes, garantizando la no discriminación[cite: 10].</p>
+            </div>
+            <div class="card-item">
+                <h3>Consentimiento Informado</h3>
+                <p>Asegurar que los pacientes y familias reciban información precisa, clara y oportuna para fundamentar sus decisiones de salud[cite: 10].</p>
+            </div>
+            <div class="card-item">
+                <h3>Confidencialidad</h3>
+                <p>Mantener estricta privacidad sobre la información personal de los pacientes en cualquier registro o sistema digital[cite: 10].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: PRÁCTICA -->
+    <section id="practica">
+        <span class="tag-label">Elemento 02</span>
+        <h2>Las enfermeras y la práctica</h2>
+        <p class="body-text">
+            Responsabilidad personal y rendición de cuentas por una práctica ética, el mantenimiento de la competencia y el bienestar profesional[cite: 15].
+        </p>
+        <div class="grid-cards">
+            <div class="card-item">
+                <h3>Competencia Continua</h3>
+                <p>Actualización permanente y ejercicio profesional dentro de los límites de competencia individual y juicio clínico[cite: 15].</p>
+            </div>
+            <div class="card-item">
+                <h3>Seguridad y Transparencia</h3>
+                <p>Promoción de una cultura abierta para reportar errores y amenazas a la seguridad del paciente sin temor a represalias[cite: 16].</p>
+            </div>
+            <div class="card-item">
+                <h3>Objeción de Conciencia</h3>
+                <p>Derecho fundamentado a rechazar procedimientos que contradigan la integridad moral, asegurando atención alternativa al paciente[cite: 15].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: PROFESIÓN -->
+    <section id="profesion">
+        <span class="tag-label">Elemento 03</span>
+        <h2>Las enfermeras y la profesión</h2>
+        <p class="body-text">
+            Liderazgo activo en la determinación de estándares, investigación basada en la evidencia y respuesta ante situaciones complejas o desastres[cite: 19].
+        </p>
+        <div class="grid-cards">
+            <div class="card-item">
+                <h3>Valores Profesionales</h3>
+                <p>Desarrollo y defensa de un núcleo central de valores fundamentados en la integridad, el rigor científico y la colaboración[cite: 19].</p>
+            </div>
+            <div class="card-item">
+                <h3>Respuesta ante Crisis</h3>
+                <p>Preparación coordinada frente a emergencias sanitarias, epidemias, conflictos y situaciones de escasez de recursos[cite: 19].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: SALUD GLOBAL -->
+    <section id="salud-global">
+        <span class="tag-label">Elemento 04</span>
+        <h2>Las enfermeras y la salud global</h2>
+        <p class="body-text">
+            Compromiso con el acceso universal a la salud, los Objetivos de Desarrollo Sostenible (ODS) y la protección del entorno natural[cite: 22].
+        </p>
+        <div class="grid-cards">
+            <div class="card-item">
+                <h3>Acceso Universal</h3>
+                <p>Defensa de la atención de salud como un derecho humano fundamental y mitigación de las desigualdades sociales[cite: 22].</p>
+            </div>
+            <div class="card-item">
+                <h3>Sostenibilidad Ambiental</h3>
+                <p>Conciencia y acción frente a las consecuencias del cambio climático y la degradación ambiental sobre la salud de las poblaciones[cite: 22].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: CONTACTO -->
+    <section id="contacto">
+        <span class="tag-label">Contacto Institucional</span>
+        <h2>Canal de Comunicación</h2>
+        <p class="body-text">
+            Para consultas institucionales sobre la aplicación de este código y directrices académicas.
+        </p>
+        <div class="card-item" style="max-width: 500px;">
+            <h3>[PLACEHOLDER: Nombre de la Institución / Facultad]</h3>
+            <p>Correo electrónico: [PLACEHOLDER: correo@universidad.edu]</p>
+            <p>Teléfono: [PLACEHOLDER: +593 999 999 999]</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Basado en el Código de Ética del CIE para las Enfermeras (Revisado en 2021)[cite: 37]. Diseñado bajo principios de минимаismo y accesibilidad.</p>
+    </footer>
+    <!-- ========================================== -->
+    <!-- FIN DE LA ZONA EDITABLE                    -->
+    <!-- ========================================== -->
+
+    <!-- ========================================== -->
+    <!-- ZONA SCRIPT (JavaScript no intrusivo)      -->
+    <!-- ========================================== -->
     <script>
-        /* ==========================================
-           NO TOCAR DESDE AQUÍ - SCRIPT DE COMPORTAMIENTO
-           ========================================== */
-        // Desplazamiento suave para los enlaces internos
+        // Desplazamiento suave para los enlaces del menú
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
